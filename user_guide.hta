@@ -1,0 +1,347 @@
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <meta charset="utf-8" />
+  <title>SoulForgeRPG — Руководство пользователя</title>
+  <HTA:APPLICATION
+    APPLICATIONNAME="SoulForgeRPG User Guide"
+    BORDER="thin"
+    BORDERSTYLE="normal"
+    CAPTION="yes"
+    SHOWINTASKBAR="yes"
+    SINGLEINSTANCE="yes"
+    SYSMENU="yes"
+    WINDOWSTATE="normal"
+  />
+  <style>
+    body {
+      margin: 0;
+      font-family: Segoe UI, Arial, sans-serif;
+      background: #111318;
+      color: #e9edf5;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      background: linear-gradient(180deg, #1a1e26 0%, #141820 100%);
+      border-right: 1px solid #2a3040;
+      padding: 24px 18px;
+      box-sizing: border-box;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #f4d08a;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #aeb7c8;
+      margin-bottom: 24px;
+    }
+
+    .nav-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #7d879b;
+      margin: 18px 0 10px;
+    }
+
+    .nav-link {
+      display: block;
+      margin-bottom: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: #eef2fa;
+      text-decoration: none;
+      background: #1f2530;
+      border: 1px solid transparent;
+    }
+
+    .nav-link:hover {
+      background: #2a3140;
+      border-color: #f4d08a;
+    }
+
+    .content {
+      flex: 1;
+      padding: 28px;
+      box-sizing: border-box;
+      background: radial-gradient(circle at top right, #232838 0%, #111318 55%);
+    }
+
+    .hero {
+      padding: 24px 26px;
+      border-radius: 18px;
+      background: rgba(20, 24, 32, 0.92);
+      border: 1px solid #31384a;
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.28);
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #3d2f17;
+      color: #f4d08a;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #f4d08a;
+      margin-bottom: 12px;
+    }
+
+    p, li {
+      line-height: 1.7;
+      color: #d6dceb;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .card {
+      background: rgba(20, 24, 32, 0.95);
+      border: 1px solid #2f3646;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .section {
+      display: none;
+      background: rgba(17, 19, 24, 0.92);
+      border: 1px solid #2b3241;
+      border-radius: 18px;
+      padding: 24px 26px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .info-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .hint {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-left: 4px solid #f4d08a;
+      background: #201c14;
+      color: #f7ebcd;
+      border-radius: 8px;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #8c96aa;
+    }
+  </style>
+  <script>
+    function showSection(sectionId) {
+      var sections = document.getElementsByClassName('section');
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].className = 'section';
+      }
+      document.getElementById(sectionId).className = 'section active';
+    }
+
+    window.onload = function () {
+      showSection('overview');
+    };
+  </script>
+</head>
+<body>
+  <div class="layout">
+    <div class="sidebar">
+      <div class="brand">SoulForgeRPG</div>
+      <div class="subtitle">
+        Руководство пользователя для учебного RPG-проекта, вдохновлённого серией Dark Souls.
+      </div>
+
+      <div class="nav-title">Основные разделы</div>
+      <a href="#" class="nav-link" onclick="showSection('overview'); return false;">Общее описание</a>
+      <a href="#" class="nav-link" onclick="showSection('launch'); return false;">Запуск игры</a>
+      <a href="#" class="nav-link" onclick="showSection('world'); return false;">Исследование мира</a>
+      <a href="#" class="nav-link" onclick="showSection('combat'); return false;">Боевая система</a>
+      <a href="#" class="nav-link" onclick="showSection('inventory'); return false;">Инвентарь</a>
+      <a href="#" class="nav-link" onclick="showSection('settings'); return false;">Настройки и профиль</a>
+      <a href="#" class="nav-link" onclick="showSection('save'); return false;">Сохранение прогресса</a>
+      <a href="#" class="nav-link" onclick="showSection('tips'); return false;">Подсказки игроку</a>
+    </div>
+
+    <div class="content">
+      <div class="hero">
+        <div class="badge">Лабораторная работа №5</div>
+        <h1>Руководство пользователя</h1>
+        <p>
+          Данное HTA-приложение предназначено для ознакомления пользователя с основными
+          возможностями SoulForgeRPG: запуском игры, исследованием мира, боевой системой,
+          инвентарём, настройками и механизмом сохранения прогресса.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>Жанр проекта</h3>
+            <p>RPG-игра с мрачной атмосферой, исследованием локаций и боевыми столкновениями.</p>
+          </div>
+          <div class="card">
+            <h3>Основные модули</h3>
+            <p>Интерфейс, игровая логика, искусственный интеллект, мир, настройки и сохранения.</p>
+          </div>
+          <div class="card">
+            <h3>Цель руководства</h3>
+            <p>Показать порядок использования ключевых возможностей программы конечным пользователем.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="overview" class="section">
+        <h2>Общее описание программы</h2>
+        <p>
+          SoulForgeRPG представляет собой учебный программный проект, в котором пользователь
+          управляет персонажем, исследует связанные между собой локации, участвует в сражениях
+          и отслеживает прогресс прохождения. Интерфейс программы построен модульно и может быть
+          расширен новыми системами и игровыми механиками.
+        </p>
+        <ul class="info-list">
+          <li>главное окно отображает текущую игровую сессию;</li>
+          <li>HUD показывает ключевые параметры персонажа;</li>
+          <li>уведомления сообщают о важных игровых событиях;</li>
+          <li>системные модули отвечают за настройки, профиль и сохранения.</li>
+        </ul>
+        <div class="hint">Для перехода между разделами используйте меню слева.</div>
+      </div>
+
+      <div id="launch" class="section">
+        <h2>Запуск игры</h2>
+        <p>
+          Для запуска приложения используется основной модуль <b>src/main.py</b>. При старте игры
+          загружаются базовые системные настройки, после чего создаётся главное окно проекта.
+        </p>
+        <ol class="info-list">
+          <li>Откройте каталог проекта SoulForgeRPG.</li>
+          <li>Запустите основной Python-файл приложения.</li>
+          <li>Убедитесь, что главное окно создаётся с выбранным разрешением.</li>
+        </ol>
+        <div class="hint">Перед запуском рекомендуется проверить корректность настроек экрана и интерфейса.</div>
+      </div>
+
+      <div id="world" class="section">
+        <h2>Исследование мира</h2>
+        <p>
+          Игровой мир состоит из взаимосвязанных локаций. Пользователь перемещается между ними,
+          отслеживает доступные направления, активные задания и найденные объекты. Карта мира и
+          журнал заданий позволяют лучше ориентироваться в структуре прохождения.
+        </p>
+        <ul class="info-list">
+          <li>локации соединены переходами, определёнными в модуле карты мира;</li>
+          <li>журнал заданий хранит текущие цели и побочные задачи;</li>
+          <li>контрольные точки фиксируют безопасные этапы прохождения.</li>
+        </ul>
+        <div class="hint">Раздел рекомендуется использовать как основу для скриншота «Исследование мира».</div>
+      </div>
+
+      <div id="combat" class="section">
+        <h2>Боевая система</h2>
+        <p>
+          Во время сражения учитываются характеристики атакующего и защищающегося персонажа.
+          Боевая подсистема рассчитывает итоговый урон на основе силы и брони, а искусственный
+          интеллект противников выбирает действие в зависимости от расстояния до игрока.
+        </p>
+        <ul class="info-list">
+          <li>сила влияет на исходящий урон;</li>
+          <li>броня уменьшает получаемый урон;</li>
+          <li>враг может атаковать вблизи или сокращать дистанцию.</li>
+        </ul>
+        <div class="hint">Этот раздел подходит для скриншота «Боевая система» в отчёте.</div>
+      </div>
+
+      <div id="inventory" class="section">
+        <h2>Инвентарь</h2>
+        <p>
+          Инвентарь хранит предметы, полученные во время исследования мира. В будущем он может
+          быть расширен механизмами экипировки, расходуемых предметов и сортировки по категориям.
+        </p>
+        <ul class="info-list">
+          <li>предметы добавляются в список инвентаря;</li>
+          <li>данные инвентаря могут включаться в сохранение прогресса;</li>
+          <li>система подготавливает основу для управления ресурсами персонажа.</li>
+        </ul>
+      </div>
+
+      <div id="settings" class="section">
+        <h2>Настройки и профиль</h2>
+        <p>
+          Пользователь может управлять параметрами интерфейса и системными характеристиками,
+          включая тему оформления, масштаб интерфейса, подсказки и разрешение окна. Профиль
+          хранит имя игрока и базовые сведения о его текущем прогрессе.
+        </p>
+        <ul class="info-list">
+          <li>выбирается визуальная тема проекта;</li>
+          <li>настраивается масштаб элементов интерфейса;</li>
+          <li>регулируется показ подсказок и миникарты;</li>
+          <li>данные профиля используются при загрузке сохранений.</li>
+        </ul>
+      </div>
+
+      <div id="save" class="section">
+        <h2>Сохранение прогресса</h2>
+        <p>
+          Сохранение предназначено для фиксации текущего состояния прохождения. Менеджер
+          сохранений формирует путь к слоту, а системные модули могут использовать его для
+          записи пользовательских данных, настроек и параметров персонажа.
+        </p>
+        <ol class="info-list">
+          <li>выберите слот сохранения;</li>
+          <li>сохраните текущий прогресс;</li>
+          <li>при следующем запуске загрузите нужный слот.</li>
+        </ol>
+        <div class="hint">Контрольные точки могут использоваться как основа для автоматического сохранения.</div>
+      </div>
+
+      <div id="tips" class="section">
+        <h2>Подсказки игроку</h2>
+        <ul class="info-list">
+          <li>следите за уровнем здоровья и выносливости во время боя;</li>
+          <li>изучайте связи между локациями перед перемещением в новую область;</li>
+          <li>не игнорируйте уведомления системы и журнал событий;</li>
+          <li>сохраняйте прогресс после достижения важной контрольной точки;</li>
+          <li>настраивайте интерфейс под собственные предпочтения.</li>
+        </ul>
+        <p class="footer-note">
+          Руководство пользователя подготовлено в формате HTA в рамках лабораторной работы №5.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
