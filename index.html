@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoulForgeRPG — учебный RPG-проект</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">
+        <span class="logo__icon">⚔️</span>
+        <span class="logo__text">SoulForgeRPG</span>
+      </div>
+      <nav class="nav">
+        <a href="#about" class="nav__link">О проекте</a>
+        <a href="#features" class="nav__link">Возможности</a>
+        <a href="#architecture" class="nav__link">Архитектура</a>
+        <a href="#tech" class="nav__link">Технологии</a>
+        <a href="#labs" class="nav__link">Лабораторные</a>
+        <a href="#docs" class="nav__link">Отчёты</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <div class="hero__badge">Лабораторная работа №6 · GitHub Pages</div>
+      <h1 class="hero__title">Soul<span class="accent">Forge</span>RPG</h1>
+      <p class="hero__subtitle">
+        Учебный программный проект в жанре action-RPG, вдохновлённый Dark Souls:
+        исследование мрачного мира, боевая система в реальном времени, инвентарь,
+        квесты, сохранения и модульная архитектура.
+      </p>
+      <div class="hero__actions">
+        <a href="#docs" class="button button--primary">Открыть отчёты</a>
+        <a href="user_guide.hta" class="button button--ghost">Руководство пользователя</a>
+      </div>
+      <div class="hero__pills">
+        <span class="pill">Боевая система</span>
+        <span class="pill">Исследование мира</span>
+        <span class="pill">Инвентарь</span>
+        <span class="pill">Квесты</span>
+        <span class="pill">Сохранения</span>
+        <span class="pill">DocBook и HTA</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section section--light">
+    <div class="container">
+      <div class="section__label">01 — О проекте</div>
+      <h2 class="section__title">Что такое SoulForgeRPG?</h2>
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            SoulForgeRPG — учебный проект по дисциплине «Профессиональная практика
+            программной инженерии». Приложение моделирует структуру однопользовательской
+            RPG-игры с мрачной атмосферой, взаимосвязанными локациями и сложными
+            сражениями против враждебных существ.
+          </p>
+          <p>
+            Проект используется как основа для практики работы с Git, ветвлением,
+            восстановлением ревизий, самодокументирующимся кодом, ручной документацией
+            и публикацией результатов в веб-формате.
+          </p>
+        </div>
+        <div class="about__stats">
+          <div class="stat-card"><div class="stat-card__num">5</div><div class="stat-card__label">основных пакетов проекта</div></div>
+          <div class="stat-card"><div class="stat-card__num">6</div><div class="stat-card__label">лабораторных работ</div></div>
+          <div class="stat-card"><div class="stat-card__num">2</div><div class="stat-card__label">формата документации</div></div>
+          <div class="stat-card"><div class="stat-card__num">1</div><div class="stat-card__label">веб-сайт для публикации</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section section--dark">
+    <div class="container">
+      <div class="section__label">02 — Возможности</div>
+      <h2 class="section__title">Основные возможности проекта</h2>
+      <div class="features__grid">
+        <article class="feature-card">
+          <div class="feature-card__icon">⚔️</div>
+          <h3 class="feature-card__title">Боевая система</h3>
+          <p class="feature-card__text">Расчёт урона, учёт защиты, контроль характеристик атакующего и защищающегося персонажа.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon">🧭</div>
+          <h3 class="feature-card__title">Исследование мира</h3>
+          <p class="feature-card__text">Переходы между локациями, перемещение по карте и работа с точками интереса игрового мира.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon">🎒</div>
+          <h3 class="feature-card__title">Инвентарь</h3>
+          <p class="feature-card__text">Хранение предметов, оружия и ресурсов, необходимых для выживания и развития героя.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon">📜</div>
+          <h3 class="feature-card__title">Квесты</h3>
+          <p class="feature-card__text">Система заданий и фиксации прогресса при выполнении сюжетных и побочных задач.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon">🤖</div>
+          <h3 class="feature-card__title">ИИ противников</h3>
+          <p class="feature-card__text">Выбор поведения врагов в зависимости от ситуации и текущего состояния боя.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon">💾</div>
+          <h3 class="feature-card__title">Сохранение прогресса</h3>
+          <p class="feature-card__text">Поддержка сохранения игровых данных и последующего восстановления состояния сеанса.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture" class="section section--light">
+    <div class="container">
+      <div class="section__label">03 — Архитектура</div>
+      <h2 class="section__title">Модульная структура</h2>
+      <p class="section__desc">
+        Проект организован по пакетам, каждый из которых отвечает за отдельную часть
+        системы: интерфейс, игровую логику, искусственный интеллект, мир и служебные
+        подсистемы.
+      </p>
+      <div class="modules__grid">
+        <div class="module-item"><span class="module-item__num">01</span><span class="module-item__name">src/ui — главное окно, меню, HUD и уведомления</span></div>
+        <div class="module-item"><span class="module-item__num">02</span><span class="module-item__name">src/core — игровой цикл, персонаж и боевая система</span></div>
+        <div class="module-item"><span class="module-item__num">03</span><span class="module-item__name">src/ai — логика поведения противников</span></div>
+        <div class="module-item"><span class="module-item__num">04</span><span class="module-item__name">src/world — карта, квесты и инвентарь</span></div>
+        <div class="module-item"><span class="module-item__num">05</span><span class="module-item__name">src/systems — настройки, сохранения, ресурсы и журналирование</span></div>
+        <div class="module-item"><span class="module-item__num">06</span><span class="module-item__name">docbook.xml, HTML-документация и HTA-руководство как сопроводительные материалы</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--accent">
+    <div class="container">
+      <div class="section__label">04 — Иллюстрации</div>
+      <h2 class="section__title">Визуальные материалы проекта</h2>
+      <div class="gallery__grid">
+        <figure class="gallery-card">
+          <img src="pics/dark-souls.jpg" alt="Исследование мира SoulForgeRPG" class="gallery-card__image" />
+          <figcaption class="gallery-card__caption">Концепция исследования мира и атмосферы локаций</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="pics/LJ5qDMGKMXkGELUERzTkxn-2048-80.jpg" alt="Боевая система SoulForgeRPG" class="gallery-card__image" />
+          <figcaption class="gallery-card__caption">Образ боевой системы и напряжённых столкновений</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech" class="section section--dark">
+    <div class="container">
+      <div class="section__label">05 — Технологии</div>
+      <h2 class="section__title">Используемые технологии и инструменты</h2>
+      <div class="tech__grid">
+        <div class="tech-item"><div class="tech-item__icon">🐍</div><div class="tech-item__name">Python</div><div class="tech-item__desc">Основной язык реализации учебного проекта и его модулей.</div></div>
+        <div class="tech-item"><div class="tech-item__icon">🔀</div><div class="tech-item__name">Git</div><div class="tech-item__desc">Контроль версий, ветвление, слияние и восстановление данных из ранних ревизий.</div></div>
+        <div class="tech-item"><div class="tech-item__icon">🌐</div><div class="tech-item__name">HTML / CSS</div><div class="tech-item__desc">Создание одностраничного сайта и публикация результатов проекта.</div></div>
+        <div class="tech-item"><div class="tech-item__icon">📘</div><div class="tech-item__name">DocBook XML</div><div class="tech-item__desc">Подготовка документации разработчика и структурированного описания системы.</div></div>
+        <div class="tech-item"><div class="tech-item__icon">🪟</div><div class="tech-item__name">HTA</div><div class="tech-item__desc">Создание руководства пользователя с навигацией по основным разделам программы.</div></div>
+        <div class="tech-item"><div class="tech-item__icon">📚</div><div class="tech-item__name">pydoc</div><div class="tech-item__desc">Генерация HTML-справки по Python-модулям проекта.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="labs" class="section section--light">
+    <div class="container">
+      <div class="section__label">06 — Лабораторные работы</div>
+      <h2 class="section__title">Этапы выполнения курса</h2>
+      <div class="timeline">
+        <div class="timeline__item"><div class="timeline__num">ЛР1</div><div class="timeline__text">Выбор темы проекта, описание назначения системы и формирование модульной архитектуры.</div></div>
+        <div class="timeline__item"><div class="timeline__num">ЛР2</div><div class="timeline__text">Работа с ветками Git, распределение модулей по направлениям и разрешение конфликтов.</div></div>
+        <div class="timeline__item"><div class="timeline__num">ЛР3</div><div class="timeline__text">Удаление и восстановление важного файла проекта из предыдущей ревизии репозитория.</div></div>
+        <div class="timeline__item"><div class="timeline__num">ЛР4</div><div class="timeline__text">Добавление docstring, подготовка DocBook XML и генерация документации программиста.</div></div>
+        <div class="timeline__item"><div class="timeline__num">ЛР5</div><div class="timeline__text">Создание руководства пользователя в формате HTA с описанием интерфейса и игровых разделов.</div></div>
+        <div class="timeline__item"><div class="timeline__num">ЛР6</div><div class="timeline__text">Разработка одностраничного сайта проекта и подготовка его к публикации через GitHub Pages.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="docs" class="section section--accent">
+    <div class="container">
+      <div class="section__label">07 — Документы</div>
+      <h2 class="section__title">Отчёты и материалы</h2>
+      <p class="section__desc">Ниже размещены ссылки на лабораторные отчёты и сопроводительные материалы проекта.</p>
+      <div class="docs__grid">
+        <a class="doc-card" href="docs/Лаб1.docx" download><div class="doc-card__icon">📄</div><div class="doc-card__body"><div class="doc-card__title">Лабораторная работа №1</div><div class="doc-card__sub">Описание проекта и архитектуры</div></div><div class="doc-card__badge">DOCX</div></a>
+        <a class="doc-card" href="docs/Лаб2.docx" download><div class="doc-card__icon">📄</div><div class="doc-card__body"><div class="doc-card__title">Лабораторная работа №2</div><div class="doc-card__sub">Ветвление и разрешение конфликтов</div></div><div class="doc-card__badge">DOCX</div></a>
+        <a class="doc-card" href="docs/Лаб3.docx" download><div class="doc-card__icon">📄</div><div class="doc-card__body"><div class="doc-card__title">Лабораторная работа №3</div><div class="doc-card__sub">Восстановление данных из ревизий</div></div><div class="doc-card__badge">DOCX</div></a>
+        <a class="doc-card" href="docs/Лаб4.docx" download><div class="doc-card__icon">📄</div><div class="doc-card__body"><div class="doc-card__title">Лабораторная работа №4</div><div class="doc-card__sub">Самодокументирующийся код</div></div><div class="doc-card__badge">DOCX</div></a>
+        <a class="doc-card" href="docs/Лаб5.docx" download><div class="doc-card__icon">📄</div><div class="doc-card__body"><div class="doc-card__title">Лабораторная работа №5</div><div class="doc-card__sub">Руководство пользователя в формате HTA</div></div><div class="doc-card__badge">DOCX</div></a>
+        <a class="doc-card" href="docs/Лаб6.docx" download><div class="doc-card__icon">📄</div><div class="doc-card__body"><div class="doc-card__title">Лабораторная работа №6</div><div class="doc-card__sub">Одностраничный сайт проекта</div></div><div class="doc-card__badge">DOCX</div></a>
+        <a class="doc-card" href="docbook.xml"><div class="doc-card__icon">📘</div><div class="doc-card__body"><div class="doc-card__title">DocBook XML</div><div class="doc-card__sub">Документация разработчика</div></div><div class="doc-card__badge">XML</div></a>
+        <a class="doc-card" href="user_guide.hta"><div class="doc-card__icon">🪟</div><div class="doc-card__body"><div class="doc-card__title">Руководство пользователя</div><div class="doc-card__sub">HTA-файл с навигацией по разделам</div></div><div class="doc-card__badge">HTA</div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--conclusion">
+    <div class="container conclusion">
+      <div class="section__label">08 — Заключение</div>
+      <h2 class="section__title">Итог</h2>
+      <p>
+        В рамках лабораторной работы №6 для проекта SoulForgeRPG создан одностраничный
+        веб-сайт, объединяющий описание программного продукта, его архитектуру,
+        используемые технологии и отчёты по всем этапам выполнения курса.
+      </p>
+      <p>
+        Сайт может быть размещён через GitHub Pages и использоваться как публичная
+        точка входа к материалам проекта и сопроводительной документации.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">⚔️ SoulForgeRPG</div>
+      <div class="footer__text">Учебный проект по дисциплине «Профессиональная практика программной инженерии»</div>
+    </div>
+  </footer>
+</body>
+</html>
