@@ -69,17 +69,12 @@
       border: 1px solid transparent;
       cursor: pointer;
       font-size: 14px;
+      box-sizing: border-box;
     }
 
     .nav-link:hover {
       background: #2a3140;
       border-color: #f4d08a;
-    }
-
-    .nav-link.active {
-      background: #332814;
-      border-color: #f4d08a;
-      color: #f7e6bb;
     }
 
     .content {
@@ -167,16 +162,13 @@
     }
 
     .section {
-      display: none;
+      display: block;
       background: rgba(17, 19, 24, 0.92);
       border: 1px solid #2b3241;
       border-radius: 18px;
       padding: 24px 26px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
-    }
-
-    .section.active {
-      display: block;
+      margin-bottom: 22px;
     }
 
     .info-list {
@@ -198,32 +190,16 @@
       font-size: 12px;
       color: #8c96aa;
     }
-  </style>
-  <script>
-    function showSection(sectionId) {
-      var sectionIds = ['overview', 'launch', 'world', 'combat', 'inventory', 'settings', 'save', 'tips'];
-      var i;
 
-      for (i = 0; i < sectionIds.length; i++) {
-        var section = document.getElementById(sectionIds[i]);
-        if (section) {
-          section.style.display = sectionIds[i] === sectionId ? 'block' : 'none';
-          section.className = sectionIds[i] === sectionId ? 'section active' : 'section';
-        }
-      }
-
-      var links = document.getElementsByTagName('button');
-      for (i = 0; i < links.length; i++) {
-        if (links[i].getAttribute('data-section')) {
-          links[i].className = links[i].getAttribute('data-section') === sectionId ? 'nav-link active' : 'nav-link';
-        }
-      }
+    .section-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #2a2230;
+      color: #d9b9f2;
+      font-size: 12px;
     }
-
-    window.onload = function () {
-      showSection('overview');
-    };
-  </script>
 </head>
 <body>
   <div class="layout">
@@ -234,14 +210,16 @@
       </div>
 
       <div class="nav-title">Основные разделы</div>
-      <button type="button" class="nav-link" data-section="overview" onclick="showSection('overview')">Общее описание</button>
-      <button type="button" class="nav-link" data-section="launch" onclick="showSection('launch')">Запуск игры</button>
-      <button type="button" class="nav-link" data-section="world" onclick="showSection('world')">Исследование мира</button>
-      <button type="button" class="nav-link" data-section="combat" onclick="showSection('combat')">Боевая система</button>
-      <button type="button" class="nav-link" data-section="inventory" onclick="showSection('inventory')">Инвентарь</button>
-      <button type="button" class="nav-link" data-section="settings" onclick="showSection('settings')">Настройки и профиль</button>
-      <button type="button" class="nav-link" data-section="save" onclick="showSection('save')">Сохранение прогресса</button>
-      <button type="button" class="nav-link" data-section="tips" onclick="showSection('tips')">Подсказки игроку</button>
+      <a class="nav-link" href="#overview">Общее описание</a>
+      <a class="nav-link" href="#launch">Запуск игры</a>
+      <a class="nav-link" href="#world">Исследование мира</a>
+      <a class="nav-link" href="#combat">Боевая система</a>
+      <a class="nav-link" href="#inventory">Инвентарь</a>
+      <a class="nav-link" href="#quests">Задания и прогресс</a>
+      <a class="nav-link" href="#settings">Настройки и профиль</a>
+      <a class="nav-link" href="#save">Сохранение прогресса</a>
+      <a class="nav-link" href="#notifications">Уведомления и журнал</a>
+      <a class="nav-link" href="#tips">Подсказки игроку</a>
     </div>
 
     <div class="content">
@@ -276,6 +254,7 @@
       </div>
 
       <div id="overview" class="section">
+        <div class="section-label">Раздел 1</div>
         <h2>Общее описание программы</h2>
         <p>
           SoulForgeRPG представляет собой учебный программный проект, в котором пользователь
@@ -293,6 +272,7 @@
       </div>
 
       <div id="launch" class="section">
+        <div class="section-label">Раздел 2</div>
         <h2>Запуск игры</h2>
         <p>
           Для запуска приложения используется основной модуль <b>src/main.py</b>. При старте игры
@@ -307,6 +287,7 @@
       </div>
 
       <div id="world" class="section">
+        <div class="section-label">Раздел 3</div>
         <h2>Исследование мира</h2>
         <img class="section-image" src="pics/dark-souls.jpg" alt="Иллюстрация исследования мира" />
         <p>
@@ -323,6 +304,7 @@
       </div>
 
       <div id="combat" class="section">
+        <div class="section-label">Раздел 4</div>
         <h2>Боевая система</h2>
         <img class="section-image" src="pics/LJ5qDMGKMXkGELUERzTkxn-2048-80.jpg" alt="Иллюстрация боевой системы" />
         <p>
@@ -339,6 +321,7 @@
       </div>
 
       <div id="inventory" class="section">
+        <div class="section-label">Раздел 5</div>
         <h2>Инвентарь</h2>
         <p>
           Инвентарь хранит предметы, полученные во время исследования мира. В будущем он может
@@ -351,7 +334,24 @@
         </ul>
       </div>
 
+      <div id="quests" class="section">
+        <div class="section-label">Раздел 6</div>
+        <h2>Задания и прогресс</h2>
+        <p>
+          Журнал заданий используется для хранения текущих целей игрока и отслеживания общего
+          продвижения по прохождению. Пользователь может ориентироваться по активным задачам,
+          возвращаться к незавершённым целям и контролировать последовательность исследования мира.
+        </p>
+        <ul class="info-list">
+          <li>активные задания помогают определить следующий этап прохождения;</li>
+          <li>побочные цели расширяют исследование мира и поиск предметов;</li>
+          <li>контрольные точки позволяют возвращаться к стабильным этапам игры.</li>
+        </ul>
+        <div class="hint">Раздел можно использовать как дополнительный скриншот структуры пользовательского руководства.</div>
+      </div>
+
       <div id="settings" class="section">
+        <div class="section-label">Раздел 7</div>
         <h2>Настройки и профиль</h2>
         <p>
           Пользователь может управлять параметрами интерфейса и системными характеристиками,
@@ -367,6 +367,7 @@
       </div>
 
       <div id="save" class="section">
+        <div class="section-label">Раздел 8</div>
         <h2>Сохранение прогресса</h2>
         <p>
           Сохранение предназначено для фиксации текущего состояния прохождения. Менеджер
@@ -381,7 +382,24 @@
         <div class="hint">Контрольные точки могут использоваться как основа для автоматического сохранения.</div>
       </div>
 
+      <div id="notifications" class="section">
+        <div class="section-label">Раздел 9</div>
+        <h2>Уведомления и журнал событий</h2>
+        <p>
+          Во время работы приложения система выводит уведомления о важных игровых событиях:
+          начале боя, достижении контрольной точки, изменении параметров персонажа и сохранении
+          прогресса. Журнал событий помогает отслеживать служебные сообщения и упрощает анализ
+          состояния приложения.
+        </p>
+        <ul class="info-list">
+          <li>уведомления отображают быстрые подсказки по текущей ситуации;</li>
+          <li>журнал фиксирует важные системные действия;</li>
+          <li>сообщения помогают ориентироваться в ходе прохождения и настройке игры.</li>
+        </ul>
+      </div>
+
       <div id="tips" class="section">
+        <div class="section-label">Раздел 10</div>
         <h2>Подсказки игроку</h2>
         <ul class="info-list">
           <li>следите за уровнем здоровья и выносливости во время боя;</li>
