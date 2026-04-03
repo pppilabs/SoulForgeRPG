@@ -58,18 +58,28 @@
 
     .nav-link {
       display: block;
+      width: 100%;
       margin-bottom: 8px;
       padding: 10px 12px;
       border-radius: 10px;
       color: #eef2fa;
       text-decoration: none;
+      text-align: left;
       background: #1f2530;
       border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 14px;
     }
 
     .nav-link:hover {
       background: #2a3140;
       border-color: #f4d08a;
+    }
+
+    .nav-link.active {
+      background: #332814;
+      border-color: #f4d08a;
+      color: #f7e6bb;
     }
 
     .content {
@@ -86,6 +96,7 @@
       border: 1px solid #31384a;
       box-shadow: 0 14px 38px rgba(0, 0, 0, 0.28);
       margin-bottom: 24px;
+      overflow: hidden;
     }
 
     .badge {
@@ -122,6 +133,29 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
       margin: 24px 0;
+    }
+
+    .hero-media {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 20px;
+    }
+
+    .hero-image,
+    .section-image {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid #394055;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+      display: block;
+    }
+
+    .section-image {
+      margin: 18px 0;
+      max-height: 320px;
+      object-fit: cover;
     }
 
     .card {
@@ -167,11 +201,23 @@
   </style>
   <script>
     function showSection(sectionId) {
-      var sections = document.getElementsByClassName('section');
-      for (var i = 0; i < sections.length; i++) {
-        sections[i].className = 'section';
+      var sectionIds = ['overview', 'launch', 'world', 'combat', 'inventory', 'settings', 'save', 'tips'];
+      var i;
+
+      for (i = 0; i < sectionIds.length; i++) {
+        var section = document.getElementById(sectionIds[i]);
+        if (section) {
+          section.style.display = sectionIds[i] === sectionId ? 'block' : 'none';
+          section.className = sectionIds[i] === sectionId ? 'section active' : 'section';
+        }
       }
-      document.getElementById(sectionId).className = 'section active';
+
+      var links = document.getElementsByTagName('button');
+      for (i = 0; i < links.length; i++) {
+        if (links[i].getAttribute('data-section')) {
+          links[i].className = links[i].getAttribute('data-section') === sectionId ? 'nav-link active' : 'nav-link';
+        }
+      }
     }
 
     window.onload = function () {
@@ -188,14 +234,14 @@
       </div>
 
       <div class="nav-title">Основные разделы</div>
-      <a href="#" class="nav-link" onclick="showSection('overview'); return false;">Общее описание</a>
-      <a href="#" class="nav-link" onclick="showSection('launch'); return false;">Запуск игры</a>
-      <a href="#" class="nav-link" onclick="showSection('world'); return false;">Исследование мира</a>
-      <a href="#" class="nav-link" onclick="showSection('combat'); return false;">Боевая система</a>
-      <a href="#" class="nav-link" onclick="showSection('inventory'); return false;">Инвентарь</a>
-      <a href="#" class="nav-link" onclick="showSection('settings'); return false;">Настройки и профиль</a>
-      <a href="#" class="nav-link" onclick="showSection('save'); return false;">Сохранение прогресса</a>
-      <a href="#" class="nav-link" onclick="showSection('tips'); return false;">Подсказки игроку</a>
+      <button type="button" class="nav-link" data-section="overview" onclick="showSection('overview')">Общее описание</button>
+      <button type="button" class="nav-link" data-section="launch" onclick="showSection('launch')">Запуск игры</button>
+      <button type="button" class="nav-link" data-section="world" onclick="showSection('world')">Исследование мира</button>
+      <button type="button" class="nav-link" data-section="combat" onclick="showSection('combat')">Боевая система</button>
+      <button type="button" class="nav-link" data-section="inventory" onclick="showSection('inventory')">Инвентарь</button>
+      <button type="button" class="nav-link" data-section="settings" onclick="showSection('settings')">Настройки и профиль</button>
+      <button type="button" class="nav-link" data-section="save" onclick="showSection('save')">Сохранение прогресса</button>
+      <button type="button" class="nav-link" data-section="tips" onclick="showSection('tips')">Подсказки игроку</button>
     </div>
 
     <div class="content">
@@ -221,6 +267,11 @@
             <h3>Цель руководства</h3>
             <p>Показать порядок использования ключевых возможностей программы конечным пользователем.</p>
           </div>
+        </div>
+
+        <div class="hero-media">
+          <img class="hero-image" src="pics/dark-souls.jpg" alt="Иллюстрация игрового мира SoulForgeRPG" />
+          <img class="hero-image" src="pics/LJ5qDMGKMXkGELUERzTkxn-2048-80.jpg" alt="Атмосферическая сцена для руководства пользователя" />
         </div>
       </div>
 
@@ -257,6 +308,7 @@
 
       <div id="world" class="section">
         <h2>Исследование мира</h2>
+        <img class="section-image" src="pics/dark-souls.jpg" alt="Иллюстрация исследования мира" />
         <p>
           Игровой мир состоит из взаимосвязанных локаций. Пользователь перемещается между ними,
           отслеживает доступные направления, активные задания и найденные объекты. Карта мира и
@@ -272,6 +324,7 @@
 
       <div id="combat" class="section">
         <h2>Боевая система</h2>
+        <img class="section-image" src="pics/LJ5qDMGKMXkGELUERzTkxn-2048-80.jpg" alt="Иллюстрация боевой системы" />
         <p>
           Во время сражения учитываются характеристики атакующего и защищающегося персонажа.
           Боевая подсистема рассчитывает итоговый урон на основе силы и брони, а искусственный
